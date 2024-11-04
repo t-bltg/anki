@@ -42,6 +42,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
     const outdentKeyCombination = "Control+Shift+,";
     function outdentListItem() {
+        context.focusField();
         if (getListItem(document.activeElement!.shadowRoot!)) {
             execCommand("outdent");
         } else {
@@ -51,6 +52,7 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
     const indentKeyCombination = "Control+Shift+.";
     function indentListItem() {
+        context.focusField();
         if (getListItem(document.activeElement!.shadowRoot!)) {
             execCommand("indent");
         } else {

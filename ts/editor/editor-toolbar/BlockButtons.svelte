@@ -40,8 +40,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
     export let api = {};
 
-    const outdentKeyCombination = "Control+Shift+,";
+    // const outdentKeyCombination = "Control+Shift+,";
+    const outdentKeyCombination = "Control+;";
     function outdentListItem() {
+        console.log("outdentListItem");
         if (getListItem(document.activeElement!.shadowRoot!)) {
             execCommand("outdent");
         } else {
@@ -49,8 +51,10 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
         }
     }
 
-    const indentKeyCombination = "Control+Shift+.";
+    // const indentKeyCombination = "Control+Shift+.";
+    const indentKeyCombination = "Control+,";
     function indentListItem() {
+        console.log("indentListItem");
         if (getListItem(document.activeElement!.shadowRoot!)) {
             execCommand("indent");
         } else {
@@ -102,7 +106,6 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             <CommandIconButton
                 key="insertUnorderedList"
                 tooltip={tr.editingUnorderedList()}
-                shortcut="Control+,"
                 modeVariantKeys={listKeys}
             >
                 <Icon icon={ulIcon} />
@@ -113,7 +116,6 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
             <CommandIconButton
                 key="insertOrderedList"
                 tooltip={tr.editingOrderedList()}
-                shortcut="Control+."
                 modeVariantKeys={listKeys}
             >
                 <Icon icon={olIcon} />
